@@ -19,7 +19,7 @@ autorefresh <- function() {
 
     newest_file <- function() {
       max(as.integer(file.mtime(
-        list.files(path = "R", pattern = "*.R", full.names = T)
+        list.files(path = "/", pattern = "*.R", full.names = T)
       )))
     }
 
@@ -42,9 +42,9 @@ autorefresh <- function() {
     )
 
     observe(
-      if ("dev/app.R" %in% list.files(here::here(), recursive = T)) {
+      if ("app.R" %in% list.files(here::here(), recursive = T)) {
         if(poll() != rv$init) {
-          Sys.setFileTime("dev/app.R",Sys.time())
+          Sys.setFileTime("app.R",Sys.time())
           rv$init <- poll()
           print(paste0(Sys.time(),": Update executed"))
 
