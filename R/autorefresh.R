@@ -19,7 +19,7 @@ autorefresh <- function() {
 
     newest_file <- function() {
       max(as.integer(file.mtime(
-        list.files(path = "/", pattern = "*.R", full.names = T)
+        list.files(path = ".", pattern = "*.R", full.names = T)
       )))
     }
 
