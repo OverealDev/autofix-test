@@ -13,7 +13,5 @@ refresh <- function() {
   if ("app.R" %in% list.files(here::here(), recursive = T)) {
     Sys.setFileTime("app.R", Sys.time())
     
-  } else {
-    stop("Couldn't locate 'app.R' in /dev (if you are working in a golem, rename run_dev.R)")
-  }
+  } 
 }
